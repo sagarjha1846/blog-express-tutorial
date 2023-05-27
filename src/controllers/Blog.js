@@ -1,6 +1,6 @@
-import { ObjectId } from 'bson';
 import Blogs from '../models/Blog.js';
 
+// Create a new blog
 const createBlog = async (req, res) => {
   const { body } = req;
   try {
@@ -11,6 +11,7 @@ const createBlog = async (req, res) => {
   }
 };
 
+// Get all blogs
 const getBlogs = async (req, res) => {
   try {
     const blog = await Blogs.find({});
@@ -20,6 +21,7 @@ const getBlogs = async (req, res) => {
   }
 };
 
+// Update a specific blog by ID
 const updateBlogs = async (req, res) => {
   const { id } = req.params;
   const { body } = req;
@@ -34,6 +36,7 @@ const updateBlogs = async (req, res) => {
   }
 };
 
+// Delete a specific blog by ID
 const deleteBlogs = async (req, res) => {
   const { id } = req.params;
   try {
